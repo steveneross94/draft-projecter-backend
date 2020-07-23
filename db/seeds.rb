@@ -11,7 +11,6 @@ Player.destroy_all
 User.destroy_all
 Roster.destroy_all
 
-
 Player.create!(name: "Christian McCaffrey", team: "CAR", position: 'RB', default_price: 71)
 Player.create!(name: "Saquon Barkley", team: "NYG", position: 'RB', default_price: 63)
 Player.create!(name: "Ezekiel Elliott", team: "DAL", position: 'RB', default_price: 61)

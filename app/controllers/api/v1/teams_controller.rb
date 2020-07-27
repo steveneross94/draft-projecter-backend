@@ -1,7 +1,7 @@
 class Api::V1::TeamsController < ApplicationController
     
     def index
-        teams = Player.all
+        teams = Team.all
         render json: teams
     end 
 
@@ -10,15 +10,15 @@ class Api::V1::TeamsController < ApplicationController
         render json: team
     end
 
-    # def teamrosters
-    #     team = Team.find(params[:id])
-    #     render json: team.rosters
-    # end
+    def create
+        team = Team.create(team_params)
+        render json: team
+    end
 
-    # def teamplayers
-    #     team = Team.find(params[:id])
-    #     render json: team.players
-    # end
+    def update
+        team = Team.find(params[:id])
+        render json: team
+    end
 
 
     

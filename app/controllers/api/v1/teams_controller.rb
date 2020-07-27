@@ -5,6 +5,20 @@ class Api::V1::TeamsController < ApplicationController
         render json: teams
     end 
 
+    def show
+        team = Team.find(params[:id])
+        render json: team
+    end
+
+    # def teamrosters
+    #     team = Team.find(params[:id])
+    #     render json: team.rosters
+    # end
+
+    # def teamplayers
+    #     team = Team.find(params[:id])
+    #     render json: team.players
+    # end
 
 
     

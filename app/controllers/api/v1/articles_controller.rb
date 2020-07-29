@@ -1,3 +1,7 @@
+require 'open-uri'
+require 'net/http'
+require 'json'
+
 class Api::V1::ArticlesController < ApplicationController
     def show
         article_api_key = ENV['article_api_key']
@@ -7,7 +11,7 @@ class Api::V1::ArticlesController < ApplicationController
       
     def fetch_url(url)
         uri = URI.parse(url)
-        response = NET::HTTP.get_response(url)
+        response = Net::HTTP.get_response(uri)
         resp_body = response.body
         json_resp = JSON.parse(resp_body)
     end
